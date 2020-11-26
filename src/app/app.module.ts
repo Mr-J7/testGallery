@@ -12,13 +12,15 @@ import { environment } from '../environments/environment';
 // Angular Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CardProductComponent
+    CardProductComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

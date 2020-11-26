@@ -18,7 +18,7 @@ export class CardProductComponent implements OnInit {
   }
   addItem(item: any) {
     this.itemsCollection.add(item);
-  }s
+  }
 
   ngOnInit(){}
 }

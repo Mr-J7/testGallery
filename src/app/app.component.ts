@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CardModalService } from './services/card-modal.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testGallery';
+
+  constructor( public cardModalService: CardModalService){}
+
 }

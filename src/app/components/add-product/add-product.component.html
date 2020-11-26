@@ -1,0 +1,63 @@
+<div class="b-black" [ngClass]="cardModalService.hide">
+    <div class="modal" style="display: block;" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Product</h5>
+                    <button (click)="cardModalService.close()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Image</label>
+                            <div class="col-sm-10">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFileLang">
+                                    <label class="custom-file-label" for="customFileLang">Select your file</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-10">
+                                <input type="textarea" class="form-control" id="inputPassword">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Price</label>
+                            <div class="col-sm-10">
+                                <input type="Number" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                    </form>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button (click)="cardModalService.close()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,5 +1,12 @@
 <app-header></app-header>
+<div class="container main-container mt-5 d-flex justify-content-end">
+    <button (click)="cardModalService.open()" type="button" class="btn btn-primary">+ Add</button>
+</div>
+
 <div class="container main-container mt-5">
 
     <app-card-product></app-card-product>
+
+    <app-add-product></app-add-product>
+
 </div>
