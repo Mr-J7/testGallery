@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "galleryapp-77a97": {
+      "hosting": {
+        "testGallery": [
+          "galleryapp-77a97"
+        ]
+      }
+    }
+  }
+}
