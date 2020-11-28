@@ -8,7 +8,14 @@
                 <br>
                 <div class="d-flex justify-content-between">
                     <p>Price: <span>{{item.price}}</span></p>
-                    <a href="#">More info...</a>
+                    <div class="d-flex justify-content-between">
+                        <button (click)="edit(item, item.id)" type="button" class="btn btn-success btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button (click)="delete(item.id)" type="button" class=" ml-1 btn btn-secondary btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class CardModalService {
 
   public hide = 'hide';
+  
+  public hideEdit = 'hide';
 
   constructor() { }
 
@@ -16,5 +18,16 @@ export class CardModalService {
 
   close(){
     this.hide = 'hide';
+  }
+
+
+
+
+  openEdit(){
+    this.hideEdit = '';
+  }
+
+  closeEdit(){
+    this.hideEdit = 'hide';
   }
 }

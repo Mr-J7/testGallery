@@ -1,10 +1,10 @@
-<div class="b-black" [ngClass]="cardModalService.hide">
+<div class="b-black" [ngClass]="cardModalService.hideEdit">
     <div class="modal" style="display: block;" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">New Product</h5>
-                    <button (click)="cardModalService.close()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title">Update Product</h5>
+                    <button (click)="close()" type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
@@ -12,12 +12,12 @@
 
 
 
-                    <form [formGroup]="formProduct" (ngSubmit)="save()">
+                    <form [formGroup]="formEditProduct" (ngSubmit)="edit()">
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
-                                <input formControlName="name" type="text" class="form-control" [value]="product">
+                                <input formControlName="name" type="text" class="form-control">
                             </div>
                         </div>
 
@@ -52,7 +52,7 @@
 
                         <div class="form-group d-flex justify-content-end">
 
-                            <button type="submit" class="btn btn-primary text-center">Add</button>
+                            <button type="submit" class="btn btn-primary text-center">Update</button>
 
                         </div>
 
