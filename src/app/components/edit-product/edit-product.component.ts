@@ -15,9 +15,15 @@ export class EditProductComponent implements OnInit {
 
   itemCard: ItemProduct;
 
+  uploadPercent: any;
+
+  urlImg: any = '';
+
+  nameFile: string;
+
   constructor( public cardModalService: CardModalService,
                private fb: FormBuilder,
-               private fbservice: FirebaseService) {                 
+               public fbservice: FirebaseService) {
                  this.createForm();
                 }
 
@@ -29,19 +35,18 @@ export class EditProductComponent implements OnInit {
 
 
 
-  createForm( ){
+createForm( ){
     this.formEditProduct = this.fb.group({
       name: [''],
       img: [],
       information: [''],
       price: []
     });
-  }
+}
 
 
-  setForm(){
+setForm(){
     this.fbservice.itemCard.subscribe(res => {
-
       this.formEditProduct.setValue({
         name: res.name,
         img: null,
@@ -49,13 +54,17 @@ export class EditProductComponent implements OnInit {
         price: res.price
       });
     });
-  }
+}
 
 
 
-  edit( ){
-    this.fbservice.editProduct(this.formEditProduct.value);
-    this.cardModalService.closeEdit();
+edit( ){
+  this.fbservice.editProduct(this.formEditProduct.value);
+  this.cardModalService.closeEdit();
+  console.log(this.urlImg);
+  this.cardModalService.closeEdit();
+  this.formEditProduct.reset();
+  this.nameFile = '';
 }
 
 
@@ -63,6 +72,15 @@ close(){
   this.cardModalService.closeEdit();
   this.createForm();
   this.formEditProduct.reset();
+}
+
+
+
+onUpload(e){
+  this.nameFile = e.target.files[0].name;
+  this.fbservice.uploadImg(e);
+  console.log(this.fbservice.urlImg);
+  this.fbservice.uploadPercent.subscribe( res => this.uploadPercent = res)
 }
 
 

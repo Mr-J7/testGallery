@@ -26,8 +26,8 @@
                             <label class="col-sm-2 col-form-label">Image</label>
                             <div class="col-sm-10">
                                 <div class="custom-file">
-                                    <input formControlName="img" type="file" class="custom-file-input">
-                                    <label class="custom-file-label" for="customFileLang">Select your file</label>
+                                    <input (change)="onUpload($event)" formControlName="img" type="file" class="custom-file-input">
+                                    <label class="custom-file-label" for="customFileLang">{{nameFile}}</label>
                                 </div>
                             </div>
 
@@ -52,7 +52,7 @@
 
                         <div class="form-group d-flex justify-content-end">
 
-                            <button type="submit" class="btn btn-primary text-center">Update</button>
+                            <button [disabled]="fbservice.urlImg === undefined" type="submit" class="btn btn-primary text-center">Update</button>
 
                         </div>
 

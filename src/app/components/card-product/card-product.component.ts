@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ItemProduct } from '../../models/item-product';
 import { FirebaseService } from '../../services/firebase.service';
 import { CardModalService } from '../../services/card-modal.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -53,8 +54,25 @@ export class CardProductComponent implements OnInit {
 
 
   delete(id: string){
-    console.log(id);
-      this.fbService.deleteProduct(id);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.fbService.deleteProduct(id);
+        Swal.fire(
+          'Deleted!',
+          'Your Item has been deleted.',
+          'success'
+        )
+      }
+    })
+
 
   }
 
