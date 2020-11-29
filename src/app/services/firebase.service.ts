@@ -79,11 +79,10 @@ export class FirebaseService {
       .pipe(
         finalize(()=>{
           const url = ref.getDownloadURL().then(res => {
-            this.urlImg = res; 
-            console.log(this.urlImg)
+            this.urlImg = res;
           });
         })
-      ).subscribe( resp=> console.log(resp))
+      ).subscribe()
 
 
   }

@@ -60,7 +60,6 @@ setForm(){
 edit( ){
   this.fbservice.editProduct(this.formEditProduct.value);
   this.cardModalService.closeEdit();
-  console.log(this.urlImg);
   this.cardModalService.closeEdit();
   this.formEditProduct.reset();
   this.nameFile = '';
@@ -78,7 +77,6 @@ close(){
 onUpload(e){
   this.nameFile = e.target.files[0].name;
   this.fbservice.uploadImg(e);
-  console.log(this.fbservice.urlImg);
   this.fbservice.uploadPercent.subscribe( res => this.uploadPercent = res);}
 
 

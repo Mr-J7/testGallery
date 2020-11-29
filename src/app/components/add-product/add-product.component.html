@@ -33,7 +33,7 @@
                                     <div class="progress-bar bg-success" role="progressbar" [attr.ariavaluenow]="uploadPercent" [style.width]="uploadPercent + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     </div>
                                 </div>
-                                <div *ngIf="fbservice.urlImg">
+                                <div *ngIf="uploadPercent === 100">
                                     <i class="far fa-check-circle"></i> Completed!!
                                 </div>
 

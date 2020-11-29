@@ -1,20 +1,24 @@
 <div class="row row-cols-1 row-cols-md-3">
     <div class="col mb-4" *ngFor="let item of items | async">
         <div class="card h-100">
-            <img [src]="item.img" class="card-img-top" alt="...">
+            <img [src]="item.img" width="200" height="200" class="card-img-top" [alt]="item.name">
             <div class="card-body">
-                <h5 class="card-title">{{item.name}}</h5>
+                <h5 class="card-title text-center">{{item.name}}</h5>
                 <p class="card-text">{{item.information}}</p>
                 <br>
                 <div class="d-flex justify-content-between">
-                    <p>Price: <span>{{item.price}}</span></p>
+                    <p><strong>Price: </strong><span>{{item.price}} $</span></p>
                     <div class="d-flex justify-content-between">
-                        <button (click)="edit(item, item.id)" type="button" class="btn btn-success btn-sm">
+
+                        <a href="#" (click)="edit(item, item.id)">
                             <i class="fas fa-edit"></i>
-                        </button>
-                        <button (click)="delete(item.id)" type="button" class=" ml-1 btn btn-secondary btn-sm">
+                        </a>
+
+
+                        <a href="#" class="ml-2" (click)="delete(item.id)">
                             <i class="fas fa-trash-alt"></i>
-                        </button>
+                        </a>
+
                     </div>
                 </div>
             </div>

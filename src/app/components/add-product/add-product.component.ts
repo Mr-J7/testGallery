@@ -31,8 +31,6 @@ nameFile: string;
                private fb: FormBuilder,
                public fbservice: FirebaseService) {
               this.createForm();
-              console.log(this.urlImg);
-              console.log(this.formProduct);
 
   }
 
@@ -61,7 +59,6 @@ nameFile: string;
   onUpload(e){
     this.nameFile = e.target.files[0].name;
     this.fbservice.uploadImg(e);
-    console.log(this.fbservice.urlImg);
     this.fbservice.uploadPercent.subscribe( res => this.uploadPercent = res);
   }
 

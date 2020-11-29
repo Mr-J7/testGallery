@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 
 // Angular Firebase
