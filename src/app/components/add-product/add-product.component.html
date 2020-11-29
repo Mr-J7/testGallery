@@ -26,15 +26,17 @@
                             <label class="col-sm-2 col-form-label">Image</label>
                             <div class="col-sm-10">
                                 <div class="custom-file">
-                                    <input formControlName="img" type="file" (change)="onUpload($event)" class="custom-file-input">
+                                    <input width="" formControlName="img" type="file" (change)="onUpload($event)" class="custom-file-input">
                                     <label class="custom-file-label" for="customFileLang">{{nameFile}}</label>
                                 </div>
-                                <div *ngIf="fbservice.urlImg === undefined" class=" mt-2">
-                                    Uploading File..
+                                <div *ngIf="uploadPercent > 0" class="progress my-2">
+                                    <div class="progress-bar bg-success" role="progressbar" [attr.ariavaluenow]="uploadPercent" [style.width]="uploadPercent + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
                                 </div>
-                                <div *ngIf="urlImg.length > 0" class=" mt-2">
-                                    Uploading Success..
+                                <div *ngIf="fbservice.urlImg">
+                                    <i class="far fa-check-circle"></i> Completed!!
                                 </div>
+
                             </div>
 
                         </div>
@@ -58,7 +60,7 @@
 
                         <div class="form-group d-flex justify-content-end">
 
-                            <button [disabled]="fbservice.urlImg === undefined" type="submit" class="btn btn-primary text-center">Add</button>
+                            <button [disabled]="fbservice.urlImg === undefined || formProduct.status === 'INVALID'" type="submit" class="btn btn-primary text-center">Add</button>
 
                         </div>
 

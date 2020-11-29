@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardModalService } from '../../services/card-modal.service';
-import { FormGroup, FormControl, Form, NgForm, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Form, NgForm, FormBuilder, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { ItemProduct } from '../../models/item-product';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -32,6 +32,8 @@ nameFile: string;
                public fbservice: FirebaseService) {
               this.createForm();
               console.log(this.urlImg);
+              console.log(this.formProduct);
+
   }
 
 
@@ -40,10 +42,10 @@ nameFile: string;
 
   createForm(){
     this.formProduct = this.fb.group({
-      name: [''],
-      img: [''],
-      information: [''],
-      price: ['']
+      name: ['', [Validators.required, Validators.minLength(5)]],
+      img: ['', [Validators.required] ],
+      information: ['', [Validators.required, Validators.minLength(10)]],
+      price: ['', [Validators.required]]
     });
   }
 
@@ -51,7 +53,6 @@ nameFile: string;
   save(){
     this.product = this.formProduct.value;
     this.fbservice.addProduct(this.product);
-    console.log(this.urlImg);
     this.cardModalService.close();
     this.formProduct.reset();
     this.nameFile = '';
@@ -61,7 +62,7 @@ nameFile: string;
     this.nameFile = e.target.files[0].name;
     this.fbservice.uploadImg(e);
     console.log(this.fbservice.urlImg);
-    this.fbservice.uploadPercent.subscribe( res => this.uploadPercent = res)
+    this.fbservice.uploadPercent.subscribe( res => this.uploadPercent = res);
   }
 
 
