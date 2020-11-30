@@ -36,6 +36,9 @@
                                 <div *ngIf="uploadPercent === 100">
                                     <i class="far fa-check-circle"></i> Completed!!
                                 </div>
+                                <div class="text-info" role="alert" *ngIf="fbservice.urlImg === undefined">
+                                    Select a new image
+                                </div>
                             </div>
 
                         </div>
@@ -59,7 +62,7 @@
 
                         <div class="form-group d-flex justify-content-end">
 
-                            <button [disabled]="fbservice.urlImg === undefined || formEditProduct.status === 'INVALID'" type="submit" class="btn btn-primary text-center">Update</button>
+                            <button type="submit" class="btn btn-primary text-center">Update</button>
 
                         </div>
 

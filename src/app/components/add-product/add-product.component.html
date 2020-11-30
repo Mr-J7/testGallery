@@ -39,6 +39,9 @@
                                 <div *ngIf="uploadPercent === 100">
                                     <i class="far fa-check-circle"></i> Completed!!
                                 </div>
+                                <div class="text-info" role="alert" *ngIf="fbservice.urlImg === undefined">
+                                    Please, select any image
+                                </div>
 
                             </div>
 

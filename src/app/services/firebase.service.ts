@@ -17,7 +17,7 @@ export class FirebaseService {
   idItem = new Subject<string>();
   id: string;
 
-  urlImg: any;
+  urlImg?: any;
   uploadPercent: Observable<any>;
 
   constructor(private afs: AngularFirestore,
