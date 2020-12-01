@@ -4,9 +4,14 @@
             <img [src]="item.img" width="200" height="200" class="card-img-top" [alt]="item.name">
             <div class="card-body">
                 <h5 class="card-title text-center">{{item.name}}</h5>
-                <p class="card-text">{{item.information}}</p>
+                <p class="card-text text-wrap">{{item.information}}</p>
+
+
                 <br>
                 <div class="d-flex justify-content-between">
+
+                    <a [routerLink]="['/details', item.id]" class="d-flex justify-content-between" href="#">More info..</a>
+
                     <p><strong>Price: </strong><span>{{item.price}} $</span></p>
                     <div class="d-flex justify-content-between">
 

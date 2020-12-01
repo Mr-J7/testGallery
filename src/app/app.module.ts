@@ -4,17 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment.prod';
+
+// Components
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
-import { environment } from '../environments/environment.prod';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DetailsItemComponent } from './pages/details-item/details-item.component';
 
 
 // Angular Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AddProductComponent } from './components/add-product/add-product.component';
-import { EditProductComponent } from './components/edit-product/edit-product.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +28,10 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     FooterComponent,
     CardProductComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    HomeComponent,
+    DetailsItemComponent,
+
   ],
   imports: [
     BrowserModule,
