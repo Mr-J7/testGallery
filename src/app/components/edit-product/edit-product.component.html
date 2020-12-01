@@ -3,10 +3,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Update Product</h5>
-                    <button (click)="close()" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                    <h5 class="modal-title b-color title-modal">Update Product</h5>
+                    <button (click)="close()" type="button" mat-mini-fab color="warn" data-dismiss="modal" aria-label="Close">X</button>
+
                 </div>
                 <div class="modal-body">
 
@@ -15,25 +14,25 @@
                     <form [formGroup]="formEditProduct" (ngSubmit)="edit()">
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Name</label>
+                            <label class="col-sm-2 col-form-label b-color input-form">Name</label>
                             <div class="col-sm-10">
-                                <input formControlName="name" type="text" class="form-control">
+                                <input formControlName="name" type="textarea" class="form-control">
                             </div>
                         </div>
 
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Image</label>
+                            <label class="col-sm-2 col-form-label b-color input-form">Image</label>
                             <div class="col-sm-10">
                                 <div class="custom-file">
                                     <input (change)="onUpload($event)" formControlName="img" type="file" class="custom-file-input">
-                                    <label class="custom-file-label" for="customFileLang">{{nameFile}}</label>
+                                    <label class="custom-file-label b-color input-form" for="customFileLang b-color ">{{nameFile}}</label>
                                 </div>
-                                <div *ngIf="uploadPercent > 0" class="progress my-2">
+                                <div *ngIf="uploadPercent> 0" class="progress my-2">
                                     <div class="progress-bar bg-success" role="progressbar" [attr.ariavaluenow]="uploadPercent" [style.width]="uploadPercent + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     </div>
                                 </div>
-                                <div *ngIf="uploadPercent === 100">
+                                <div class="b-color" *ngIf="uploadPercent === 100">
                                     <i class="far fa-check-circle"></i> Completed!!
                                 </div>
                                 <div class="text-info" role="alert" *ngIf="fbservice.urlImg === undefined">
@@ -45,7 +44,7 @@
 
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Description</label>
+                            <label class="col-sm-2 col-form-label b-color input-form">Description</label>
                             <div class="col-sm-10">
                                 <input formControlName="information" type="textarea" class="form-control" id="inputPassword">
                             </div>
@@ -62,7 +61,8 @@
 
                         <div class="form-group d-flex justify-content-end">
 
-                            <button type="submit" class="btn btn-primary text-center">Update</button>
+                            <button type="submit" mat-raised-button color="primary">Update</button>
+
 
                         </div>
 
